@@ -9,7 +9,7 @@ using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NEWCLASS
+namespace TravelBookingClassLibrary
 {
     public class ReviewDbContext
     {
