@@ -81,5 +81,37 @@ namespace TravelBookingClassLibrary.Repository
                 }
             }
         }
+
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            using (var context = new AppDbContext())
+            {
+                return await context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            }
+        }
+
+
+        public async Task<int> GetTotalUsers()
+        {
+            using (var context = new AppDbContext())
+            {
+                return await context.Users.CountAsync();
+            }
+        }
+
+        public async Task<List<User>> GetUsersByRole(string role)
+        {
+            using (var context = new AppDbContext())
+            {
+                return await context.Users.Where(u => u.Role == role).ToListAsync();
+            }
+        }
+
+
+       
+
+
+
     }
 }
