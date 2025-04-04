@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-namespace TravelBookingClassLibrary.Entity
+
+namespace InsuranceClass.Entity
 {
     public class Insurance
     {
         [Key]
         public int InsuranceID { get; set; }
 
-        public int UserID { get; set; }
-        public required string CoverageDetails { get; set; }
-        public required string Provider { get; set; }
-        public string Status { get; set; } = "Active";
-        public DateTime PurchaseDate { get; set; } = DateTime.Now;
+       
+        public int? BookingID { get; set; }
 
-        // Navigation property
-        public required User User { get; set; }
+
+        public string CoverageDetails { get; set; }
+        public string Provider { get; set; }
+        public List<Booking>? Bookings { get; set; } // Navigation property to Booking
+
     }
-
 }
-
